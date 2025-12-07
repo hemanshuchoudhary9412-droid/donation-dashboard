@@ -83,22 +83,7 @@ export default function DonationDashboard() {
     e.target.reset();
   };
 
-  // Edit Donation
-  const editDonation = (i)=>{
-    const name = prompt("Enter new name:",donations[i].name);
-    const amount = prompt("Enter new amount:",donations[i].amount);
 
-    if(name&&amount){
-      const updated=[...donations];
-      updated[i]={name,amount:Number(amount)};
-      setDonations(updated);
-    }
-  };
-
-  // Delete Donation
-  const deleteDonation = (i)=>{
-    setDonations(donations.filter((_,index)=>index!==i));
-  };
 
 
   const [search,setSearch]=useState("");
@@ -166,7 +151,6 @@ export default function DonationDashboard() {
             <tr className="bg-gray-300">
               <th className="p-3 text-center">Donor</th>
               <th className="p-3 text-center">Amount</th>
-              <th className="p-3 text-center">Actions</th>
             </tr>
           </thead>
 
@@ -177,17 +161,6 @@ export default function DonationDashboard() {
             <tr key={i} className="border-t hover:bg-gray-100 text-black">
               <td className="p-3 text-center">{d.name}</td>
               <td className="p-3 text-center font-semibold">₹{d.amount}</td>
-              <td className="p-3">
-                <div className="flex justify-center gap-2">
-
-                  <button className="bg-yellow-500 text-white px-3 py-1 rounded"
-                    onClick={()=>editDonation(i)}>Edit</button>
-
-                  <button className="bg-red-600 text-white px-3 py-1 rounded"
-                    onClick={()=>deleteDonation(i)}>Delete</button>
-
-                </div>
-              </td>
             </tr>
           ))}
           </tbody>
