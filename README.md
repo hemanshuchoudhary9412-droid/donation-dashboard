@@ -31,6 +31,3 @@ Supports **Add/Edit/Delete**, **Search**, **Dark Mode**, and stores data using *
 | Vite | Build Tool |
 
 ---
-
-## 📸 Screenshots (Add Later)
-
